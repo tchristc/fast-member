@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f6ea4253-fb7b-4ba9-97e1-fb539f7c6ebf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/FastMember.Core.sln" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember.Core.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember.Tests/Anons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember.Tests/Anons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember.Tests/BasicTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember.Tests/BasicTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember.Tests/ChainingPropertyDescriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember.Tests/ChainingPropertyDescriptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember.Tests/HyperTypeDescriptionProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember.Tests/HyperTypeDescriptionProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember.Tests/HyperTypeDescriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember.Tests/HyperTypeDescriptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember/CallSiteCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember/CallSiteCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember/MemberSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember/MemberSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember/ObjectAccessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember/ObjectAccessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember/ObjectReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember/ObjectReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMember/TypeAccessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FastMember/TypeAccessor.cs" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="CallSiteCache.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FastMember/CallSiteCache.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+              <folding>
+                <marker date="1550407150985" expanded="false" signature="6:116" ph="..." />
+                <marker date="1550407150985" expanded="true" signature="138:2056" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="180:2054" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="351:1114" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="479:1050" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="914:1018" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="1194:2039" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="1330:1975" ph="{...}" />
+                <marker date="1550407150985" expanded="true" signature="1839:1943" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberSet.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FastMember/MemberSet.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+              <folding>
+                <marker date="1550407258918" expanded="false" signature="6:91" ph="..." />
+                <marker date="1550407258918" expanded="true" signature="113:4618" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="120:224" ph="/// Represents an abstracted view of the members defined for a type ... " />
+                <marker date="1550407258918" expanded="true" signature="274:2260" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="353:667" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="676:765" ph="/// Return a sequence of all defined members ... " />
+                <marker date="1550407258918" expanded="true" signature="816:901" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="910:980" ph="/// Get a member by index ... " />
+                <marker date="1550407258918" expanded="true" signature="1047:1139" ph="/// The number of members defined for this type ... " />
+                <marker date="1550407258918" expanded="true" signature="1229:1338" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="2265:2378" ph="/// Represents an abstracted view of an individual member defined for a type ... " />
+                <marker date="1550407258918" expanded="true" signature="2409:4616" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="2502:2556" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="2565:2637" ph="/// The name of this member ... " />
+                <marker date="1550407258918" expanded="true" signature="2690:2778" ph="/// The type of value stored in this member ... " />
+                <marker date="1550407258918" expanded="true" signature="2803:3217" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="2829:3207" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="2875:3120" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="3227:3323" ph="/// Is the attribute specified defined on this type ... " />
+                <marker date="1550407258918" expanded="true" signature="3373:3551" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="3561:3632" ph="/// Getting Attribute Type ... " />
+                <marker date="1550407258918" expanded="true" signature="3785:3840" ph="/// Property Can Write ... " />
+                <marker date="1550407258918" expanded="true" signature="3863:4185" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="3889:4175" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="3946:4161" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="4195:4261" ph="/// Property Can Read ... " />
+                <marker date="1550407258918" expanded="true" signature="4289:4610" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="4315:4600" ph="{...}" />
+                <marker date="1550407258918" expanded="true" signature="4372:4586" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FastMember.Tests/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1185">
+              <caret line="132" selection-start-line="16" selection-end-line="132" />
+              <folding>
+                <marker date="1550406381094" expanded="true" signature="6:360" ph="..." />
+                <marker date="1550406381094" expanded="true" signature="387:4345" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="414:4343" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="463:3853" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="863:1343" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="1175:1304" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="1402:1911" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="2024:2121" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="2219:2316" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="2415:2549" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="2660:2794" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="2900:3031" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="3141:3260" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="3367:3447" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="3569:3652" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="3770:3843" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="4004:4337" ph="{...}" />
+                <marker date="1550406381094" expanded="true" signature="4042:4327" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Class1.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FastMember.ConsoleApp/Class1.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+              <folding>
+                <marker date="1550408032731" expanded="true" signature="6:67" ph="..." />
+                <marker date="1550408032731" expanded="true" signature="100:4059" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="127:4056" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="176:3566" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="576:1056" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="888:1017" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="1115:1624" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="1737:1834" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="1932:2029" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="2128:2262" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="2373:2507" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="2613:2744" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="2854:2973" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="3080:3160" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="3282:3365" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="3483:3556" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="3717:4050" ph="{...}" />
+                <marker date="1550408032731" expanded="true" signature="3755:4040" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/FastMember.Tests/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FastMember.ConsoleApp/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FastMember/TypeAccessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FastMember/MemberSet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FastMember/CallSiteCache.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/FastMember/CallSiteCache.cs" />
+        <option value="$PROJECT_DIR$/FastMember/MemberSet.cs" />
+        <option value="$PROJECT_DIR$/FastMember.ConsoleApp/Class1.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-2048" />
+    <option name="y" value="-1069" />
+    <option name="width" value="2048" />
+    <option name="height" value="2120" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FastMember.Core (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FastMember.Core (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="FastMember" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FastMember.Core (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="FastMember.ConsoleApp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FastMember.Core (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="FastMember.Tests" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FastMember.Core (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="FastMember.Tests" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Dependencies" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FastMember.Core (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="FastMember.Tests" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Dependencies" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name=".NETCoreApp 2" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.FastMember.ConsoleApp">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+    </configuration>
+    <configuration name="FastMember.ConsoleApp" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/FastMember.ConsoleApp/bin/Debug/FastMember.ConsoleApp.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FastMember.ConsoleApp/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/FastMember.ConsoleApp/FastMember.ConsoleApp.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v2.0" />
+    </configuration>
+    <list>
+      <item itemvalue=".NET Project.Default" />
+      <item itemvalue=".NET Project.FastMember.ConsoleApp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Project.FastMember.ConsoleApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6ea4253-fb7b-4ba9-97e1-fb539f7c6ebf" name="Default" comment="" />
+      <created>1550406792417</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550406792417</updated>
+      <workItem from="1550406796001" duration="1235000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1235000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-2048" y="-1069" width="2048" height="2120" extended-state="0" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32997987" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="NuGet" weight="0.32997987" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12122736" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.32997987" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FastMember/CallSiteCache.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <marker date="1550407150985" expanded="false" signature="6:116" ph="..." />
+            <marker date="1550407150985" expanded="true" signature="138:2056" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="180:2054" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="351:1114" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="479:1050" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="914:1018" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="1194:2039" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="1330:1975" ph="{...}" />
+            <marker date="1550407150985" expanded="true" signature="1839:1943" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FastMember/MemberSet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <marker date="1550407258918" expanded="false" signature="6:91" ph="..." />
+            <marker date="1550407258918" expanded="true" signature="113:4618" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="120:224" ph="/// Represents an abstracted view of the members defined for a type ... " />
+            <marker date="1550407258918" expanded="true" signature="274:2260" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="353:667" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="676:765" ph="/// Return a sequence of all defined members ... " />
+            <marker date="1550407258918" expanded="true" signature="816:901" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="910:980" ph="/// Get a member by index ... " />
+            <marker date="1550407258918" expanded="true" signature="1047:1139" ph="/// The number of members defined for this type ... " />
+            <marker date="1550407258918" expanded="true" signature="1229:1338" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="2265:2378" ph="/// Represents an abstracted view of an individual member defined for a type ... " />
+            <marker date="1550407258918" expanded="true" signature="2409:4616" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="2502:2556" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="2565:2637" ph="/// The name of this member ... " />
+            <marker date="1550407258918" expanded="true" signature="2690:2778" ph="/// The type of value stored in this member ... " />
+            <marker date="1550407258918" expanded="true" signature="2803:3217" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="2829:3207" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="2875:3120" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="3227:3323" ph="/// Is the attribute specified defined on this type ... " />
+            <marker date="1550407258918" expanded="true" signature="3373:3551" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="3561:3632" ph="/// Getting Attribute Type ... " />
+            <marker date="1550407258918" expanded="true" signature="3785:3840" ph="/// Property Can Write ... " />
+            <marker date="1550407258918" expanded="true" signature="3863:4185" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="3889:4175" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="3946:4161" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="4195:4261" ph="/// Property Can Read ... " />
+            <marker date="1550407258918" expanded="true" signature="4289:4610" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="4315:4600" ph="{...}" />
+            <marker date="1550407258918" expanded="true" signature="4372:4586" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FastMember.Tests/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="132" selection-start-line="16" selection-end-line="132" />
+          <folding>
+            <marker date="1550406381094" expanded="true" signature="6:360" ph="..." />
+            <marker date="1550406381094" expanded="true" signature="387:4345" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="414:4343" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="463:3853" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="863:1343" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="1175:1304" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="1402:1911" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="2024:2121" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="2219:2316" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="2415:2549" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="2660:2794" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="2900:3031" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="3141:3260" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="3367:3447" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="3569:3652" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="3770:3843" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="4004:4337" ph="{...}" />
+            <marker date="1550406381094" expanded="true" signature="4042:4327" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FastMember.ConsoleApp/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <marker date="1550408032731" expanded="true" signature="6:67" ph="..." />
+            <marker date="1550408032731" expanded="true" signature="100:4059" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="127:4056" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="176:3566" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="576:1056" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="888:1017" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="1115:1624" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="1737:1834" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="1932:2029" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="2128:2262" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="2373:2507" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="2613:2744" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="2854:2973" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="3080:3160" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="3282:3365" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="3483:3556" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="3717:4050" ph="{...}" />
+            <marker date="1550408032731" expanded="true" signature="3755:4040" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

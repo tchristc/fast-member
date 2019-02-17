@@ -4,7 +4,8 @@ using System.ComponentModel;
 namespace Hyper.ComponentModel {
     public abstract class ChainingPropertyDescriptor : PropertyDescriptor {
         private readonly PropertyDescriptor _root;
-        protected PropertyDescriptor Root { get { return _root; } }
+        protected PropertyDescriptor Root => _root;
+
         protected ChainingPropertyDescriptor(PropertyDescriptor root)
             : base(root) {
             _root = root;
@@ -12,42 +13,23 @@ namespace Hyper.ComponentModel {
         public override void AddValueChanged(object component, EventHandler handler) {
             Root.AddValueChanged(component, handler);
         }
-        public override AttributeCollection Attributes {
-            get {
-                return Root.Attributes;
-            }
-        }
+        public override AttributeCollection Attributes => Root.Attributes;
+
         public override bool CanResetValue(object component) {
             return Root.CanResetValue(component);
         }
-        public override string Category {
-            get {
-                return Root.Category;
-            }
-        }
-        public override Type ComponentType {
-            get { return Root.ComponentType; }
-        }
-        public override TypeConverter Converter {
-            get {
-                return Root.Converter;
-            }
-        }
-        public override string Description {
-            get {
-                return Root.Description;
-            }
-        }
-        public override bool DesignTimeOnly {
-            get {
-                return Root.DesignTimeOnly;
-            }
-        }
-        public override string DisplayName {
-            get {
-                return Root.DisplayName;
-            }
-        }
+        public override string Category => Root.Category;
+
+        public override Type ComponentType => Root.ComponentType;
+
+        public override TypeConverter Converter => Root.Converter;
+
+        public override string Description => Root.Description;
+
+        public override bool DesignTimeOnly => Root.DesignTimeOnly;
+
+        public override string DisplayName => Root.DisplayName;
+
         public override bool Equals(object obj) {
             return Root.Equals(obj);
         }
@@ -63,27 +45,16 @@ namespace Hyper.ComponentModel {
         public override object GetValue(object component) {
             return Root.GetValue(component);
         }
-        public override bool IsBrowsable {
-            get {
-                return Root.IsBrowsable;
-            }
-        }
-        public override bool IsLocalizable {
-            get {
-                return Root.IsLocalizable;
-            }
-        }
-        public override bool IsReadOnly {
-            get { return Root.IsReadOnly; }
-        }
-        public override string Name {
-            get {
-                return Root.Name;
-            }
-        }
-        public override Type PropertyType {
-            get { return Root.PropertyType; }
-        }
+        public override bool IsBrowsable => Root.IsBrowsable;
+
+        public override bool IsLocalizable => Root.IsLocalizable;
+
+        public override bool IsReadOnly => Root.IsReadOnly;
+
+        public override string Name => Root.Name;
+
+        public override Type PropertyType => Root.PropertyType;
+
         public override void RemoveValueChanged(object component, EventHandler handler) {
             Root.RemoveValueChanged(component, handler);
         }
@@ -96,11 +67,8 @@ namespace Hyper.ComponentModel {
         public override bool ShouldSerializeValue(object component) {
             return Root.ShouldSerializeValue(component);
         }
-        public override bool SupportsChangeEvents {
-            get {
-                return Root.SupportsChangeEvents;
-            }
-        }
+        public override bool SupportsChangeEvents => Root.SupportsChangeEvents;
+
         public override string ToString() {
             return Root.ToString();
         }

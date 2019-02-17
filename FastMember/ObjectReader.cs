@@ -40,7 +40,7 @@ namespace FastMember
 
             
 
-            bool allMembers = members == null || members.Length == 0;
+            var allMembers = members == null || members.Length == 0;
 
             this.accessor = TypeAccessor.Create(type);
             if (accessor.GetMembersSupported)
@@ -50,7 +50,7 @@ namespace FastMember
                 if (allMembers)
                 {
                     members = new string[typeMembers.Count];
-                    for (int i = 0; i < members.Length; i++)
+                    for (var i = 0; i < members.Length; i++)
                     {
                         members[i] = typeMembers[i].Name;
                     }
@@ -58,11 +58,11 @@ namespace FastMember
 
                 this.allowNull = new BitArray(members.Length);
                 this.effectiveTypes = new Type[members.Length];
-                for (int i = 0; i < members.Length; i++)
+                for (var i = 0; i < members.Length; i++)
                 {
                     Type memberType = null;
-                    bool allowNull = true;
-                    string hunt = members[i];
+                    var allowNull = true;
+                    var hunt = members[i];
                     foreach (var member in typeMembers)
                     {
                         if (member.Name == hunt)
@@ -101,15 +101,12 @@ namespace FastMember
         object current;
 
 
-        public override int Depth
-        {
-            get { return 0; }
-        }
+        public override int Depth => 0;
 
         public override DataTable GetSchemaTable()
         {
             // these are the columns used by DataTable load
-            DataTable table = new DataTable
+            var table = new DataTable
             {
                 Columns =
                 {
@@ -120,8 +117,8 @@ namespace FastMember
                     {"AllowDBNull", typeof(bool)}
                 }
             };
-            object[] rowData = new object[5];
-            for (int i = 0; i < memberNames.Length; i++)
+            var rowData = new object[5];
+            for (var i = 0; i < memberNames.Length; i++)
             {
                 rowData[0] = i;
                 rowData[1] = memberNames[i];
@@ -137,13 +134,7 @@ namespace FastMember
             Shutdown();
         }
 
-        public override bool HasRows
-        {
-            get
-            {
-                return active;
-            }
-        }
+        public override bool HasRows => active;
         private bool active = true;
         public override bool NextResult()
         {
@@ -169,10 +160,7 @@ namespace FastMember
             return false;
         }
 
-        public override int RecordsAffected
-        {
-            get { return 0; }
-        }
+        public override int RecordsAffected => 0;
 
         protected override void Dispose(bool disposing)
         {
@@ -188,17 +176,9 @@ namespace FastMember
             if (tmp != null) tmp.Dispose();
         }
 
-        public override int FieldCount
-        {
-            get { return memberNames.Length; }
-        }
-        public override bool IsClosed
-        {
-            get
-            {
-                return source == null;
-            }
-        }
+        public override int FieldCount => memberNames.Length;
+
+        public override bool IsClosed => source == null;
 
         public override bool GetBoolean(int i)
         {
@@ -212,11 +192,11 @@ namespace FastMember
 
         public override long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length)
         {
-            byte[] s = (byte[])this[i];
-            int available = s.Length - (int)fieldOffset;
+            var s = (byte[])this[i];
+            var available = s.Length - (int)fieldOffset;
             if (available <= 0) return 0;
 
-            int count = Math.Min(length, available);
+            var count = Math.Min(length, available);
             Buffer.BlockCopy(s, (int)fieldOffset, buffer, bufferoffset, count);
             return count;
         }
@@ -228,11 +208,11 @@ namespace FastMember
 
         public override long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length)
         {
-            string s = (string)this[i];
-            int available = s.Length - (int)fieldoffset;
+            var s = (string)this[i];
+            var available = s.Length - (int)fieldoffset;
             if (available <= 0) return 0;
 
-            int count = Math.Min(length, available);
+            var count = Math.Min(length, available);
             s.CopyTo((int)fieldoffset, buffer, bufferoffset, count);
             return count;
         }
@@ -321,8 +301,8 @@ namespace FastMember
             var current = this.current;
             var accessor = this.accessor;
 
-            int count = Math.Min(values.Length, members.Length);
-            for (int i = 0; i < count; i++) values[i] = accessor[current, members[i]] ?? DBNull.Value;
+            var count = Math.Min(values.Length, members.Length);
+            for (var i = 0; i < count; i++) values[i] = accessor[current, members[i]] ?? DBNull.Value;
             return count;
         }
 
@@ -331,17 +311,11 @@ namespace FastMember
             return this[i] is DBNull;
         }
 
-        public override object this[string name]
-        {
-            get { return accessor[current, name] ?? DBNull.Value; }
+        public override object this[string name] => accessor[current, name] ?? DBNull.Value;
 
-        }
         /// <summary>
         /// Gets the value of the current object in the member specified
         /// </summary>
-        public override object this[int i]
-        {
-            get { return accessor[current, memberNames[i]] ?? DBNull.Value; }
-        }
+        public override object this[int i] => accessor[current, memberNames[i]] ?? DBNull.Value;
     }
 }

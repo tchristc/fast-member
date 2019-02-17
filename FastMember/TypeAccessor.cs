@@ -19,7 +19,7 @@ namespace FastMember
         /// <summary>
         /// Does this type support new instances via a parameterless constructor?
         /// </summary>
-        public virtual bool CreateNewSupported { get { return false; } }
+        public virtual bool CreateNewSupported => false;
         /// <summary>
         /// Create a new instance of this type
         /// </summary>
@@ -28,7 +28,8 @@ namespace FastMember
         /// <summary>
         /// Can this type be queried for member availability?
         /// </summary>
-        public virtual bool GetMembersSupported { get { return false; } }
+        public virtual bool GetMembersSupported => false;
+
         /// <summary>
         /// Query the members available for this type
         /// </summary>
@@ -51,7 +52,7 @@ namespace FastMember
         {
             if (type == null) throw new ArgumentNullException("type");
             var lookup = allowNonPublicAccessors ? nonPublicAccessors : publicAccessorsOnly;
-            TypeAccessor obj = (TypeAccessor)lookup[type];
+            var obj = (TypeAccessor)lookup[type];
             if (obj != null) return obj;
 
             lock (lookup)
@@ -72,8 +73,8 @@ namespace FastMember
             private DynamicAccessor() { }
             public override object this[object target, string name]
             {
-                get { return CallSiteCache.GetValue(name, target); }
-                set { CallSiteCache.SetValue(name, target, value); }
+                get => CallSiteCache.GetValue(name, target);
+                set => CallSiteCache.SetValue(name, target, value);
             }
         }
 
@@ -91,7 +92,7 @@ namespace FastMember
         {
             OpCode obj, index, value;
 
-            Label fail = il.DefineLabel();
+            var fail = il.DefineLabel();
             if (mapField == null)
             {
                 index = OpCodes.Ldarg_0;
@@ -112,8 +113,8 @@ namespace FastMember
                 il.EmitCall(OpCodes.Callvirt, tryGetValue, null);
                 il.Emit(OpCodes.Brfalse, fail);
             }            
-            Label[] labels = new Label[members.Count];
-            for (int i = 0; i < labels.Length; i++)
+            var labels = new Label[members.Count];
+            for (var i = 0; i < labels.Length; i++)
             {
                 labels[i] = il.DefineLabel();
             }
@@ -123,11 +124,11 @@ namespace FastMember
             il.Emit(OpCodes.Ldstr, "name");
             il.Emit(OpCodes.Newobj, typeof(ArgumentOutOfRangeException).GetConstructor(new Type[] { typeof(string) }));
             il.Emit(OpCodes.Throw);
-            for (int i = 0; i < labels.Length; i++)
+            for (var i = 0; i < labels.Length; i++)
             {
                 il.MarkLabel(labels[i]);
                 var member = members[i];
-                bool isFail = true;
+                var isFail = true;
                 FieldInfo field;
                 PropertyInfo prop;
                 if((field = member as FieldInfo) != null)
@@ -189,7 +190,8 @@ namespace FastMember
             /// <summary>
             /// Can this type be queried for member availability?
             /// </summary>
-            public override bool GetMembersSupported { get { return true; } }
+            public override bool GetMembersSupported => true;
+
             private MemberSet members;
             /// <summary>
             /// Query the members available for this type
@@ -206,10 +208,8 @@ namespace FastMember
             private readonly Action<int, object, object> setter;
             private readonly Func<object> ctor;
             private readonly Type type;
-            protected override Type Type
-            {
-                get { return type; }
-            }
+            protected override Type Type => type;
+
             public DelegateAccessor(Dictionary<string, int> map, Func<int, object, object> getter, Action<int, object, object> setter, Func<object> ctor, Type type)
             {
                 this.map = map;
@@ -218,7 +218,8 @@ namespace FastMember
                 this.ctor = ctor;
                 this.type = type;
             }
-            public override bool CreateNewSupported { get { return ctor != null; } }
+            public override bool CreateNewSupported => ctor != null;
+
             public override object CreateNew()
             {
                 return ctor != null ? ctor() : base.CreateNew();
@@ -246,7 +247,7 @@ namespace FastMember
 
             if (allowNonPublicAccessors)
             {
-                for (int i = 0; i < props.Length; i++)
+                for (var i = 0; i < props.Length; i++)
                 {
                     if (props[i].GetGetMethod(true) != null && props[i].GetGetMethod(false) == null) return false; // non-public getter
                     if (props[i].GetSetMethod(true) != null && props[i].GetSetMethod(false) == null) return false; // non-public setter
@@ -262,11 +263,11 @@ namespace FastMember
                 return DynamicAccessor.Singleton;
             }
 
-            PropertyInfo[] props = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.Instance);
-            Dictionary<string, int> map = new Dictionary<string, int>();
-            List<MemberInfo> members = new List<MemberInfo>(props.Length + fields.Length);
-            int i = 0;
+            var props = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            var fields = type.GetFields(BindingFlags.Public | BindingFlags.Instance);
+            var map = new Dictionary<string, int>();
+            var members = new List<MemberInfo>(props.Length + fields.Length);
+            var i = 0;
             foreach (var prop in props)
             {
                 if (!map.ContainsKey(prop.Name) && prop.GetIndexParameters().Length == 0)
@@ -307,12 +308,12 @@ namespace FastMember
             // note this region is synchronized; only one is being created at a time so we don't need to stress about the builders
             if (assembly == null)
             {
-                AssemblyName name = new AssemblyName("FastMember_dynamic");
+                var name = new AssemblyName("FastMember_dynamic");
                 assembly = AssemblyBuilder.DefineDynamicAssembly(name, AssemblyBuilderAccess.Run);
                 module = assembly.DefineDynamicModule(name.Name);
             }
-            TypeAttributes attribs = typeof(TypeAccessor).Attributes;
-            TypeBuilder tb = module.DefineType("FastMember_dynamic." + type.Name + "_" + GetNextCounterValue(),
+            var attribs = typeof(TypeAccessor).Attributes;
+            var tb = module.DefineType("FastMember_dynamic." + type.Name + "_" + GetNextCounterValue(),
                 (attribs | TypeAttributes.Sealed | TypeAttributes.Public) & ~(TypeAttributes.Abstract | TypeAttributes.NotPublic), typeof(RuntimeTypeAccessor));
 
             il = tb.DefineConstructor(MethodAttributes.Public, CallingConventions.Standard, new[] {
@@ -320,14 +321,14 @@ namespace FastMember
             }).GetILGenerator();
             il.Emit(OpCodes.Ldarg_0);
             il.Emit(OpCodes.Ldarg_1);
-            FieldBuilder mapField = tb.DefineField("_map", typeof(Dictionary<string, int>), FieldAttributes.InitOnly | FieldAttributes.Private);
+            var mapField = tb.DefineField("_map", typeof(Dictionary<string, int>), FieldAttributes.InitOnly | FieldAttributes.Private);
             il.Emit(OpCodes.Stfld, mapField);
             il.Emit(OpCodes.Ret);
 
 
-            PropertyInfo indexer = typeof(TypeAccessor).GetProperty("Item");
+            var indexer = typeof(TypeAccessor).GetProperty("Item");
             MethodInfo baseGetter = indexer.GetGetMethod(), baseSetter = indexer.GetSetMethod();
-            MethodBuilder body = tb.DefineMethod(baseGetter.Name, baseGetter.Attributes & ~MethodAttributes.Abstract, typeof(object), new Type[] { typeof(object), typeof(string) });
+            var body = tb.DefineMethod(baseGetter.Name, baseGetter.Attributes & ~MethodAttributes.Abstract, typeof(object), new Type[] { typeof(object), typeof(string) });
             il = body.GetILGenerator();
             WriteMapImpl(il, type, members, mapField, allowNonPublicAccessors, true);
             tb.DefineMethodOverride(body, baseGetter);

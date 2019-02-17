@@ -38,7 +38,7 @@ namespace FastMemberTests
         {
             var accessor = TypeAccessor.Create(typeof (Private));
             Assert.True(accessor.CreateNewSupported);
-            object obj = accessor.CreateNew();
+            var obj = accessor.CreateNew();
             Assert.NotNull(obj);
             Assert.IsType<Private>(obj);
         }

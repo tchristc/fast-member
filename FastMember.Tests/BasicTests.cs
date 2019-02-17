@@ -201,7 +201,7 @@ namespace FastMemberTests
             {
                 var access = TypeAccessor.Create(typeof(PropsOnClass));
                 var obj = new PropsOnClass();
-                object value = access[obj, "doesnotexist"];
+                var value = access[obj, "doesnotexist"];
             });
         }
 
@@ -261,13 +261,13 @@ namespace FastMemberTests
 
             accessor = TypeAccessor.Create(typeof (HasDefaultCtor));
             Assert.True(accessor.CreateNewSupported);
-            object obj = accessor.CreateNew();
+            var obj = accessor.CreateNew();
             Assert.IsType<HasDefaultCtor>(obj);
         }
 
         public class HasGetterNoSetter
         {
-            public int Foo { get { return 5; } }
+            public int Foo => 5;
         }
         [Fact]
         public void TestHasGetterNoSetter()
@@ -323,7 +323,7 @@ namespace FastMemberTests
 
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                int i = (int)acc0[obj, "Bar"];
+                var i = (int)acc0[obj, "Bar"];
             });
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {

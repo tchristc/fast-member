@@ -25,13 +25,13 @@ namespace Hyper.ComponentModel {
             return propertyCollections;
         }
         private static PropertyDescriptorCollection WrapProperties(PropertyDescriptorCollection oldProps) {
-            PropertyDescriptor[] newProps = new PropertyDescriptor[oldProps.Count];
-            int index = 0;
-            bool changed = false;
+            var newProps = new PropertyDescriptor[oldProps.Count];
+            var index = 0;
+            var changed = false;
             // HACK: how to identify reflection, given that the class is internal...
-            Type wrapMe = Assembly.GetAssembly(typeof(PropertyDescriptor)).GetType("System.ComponentModel.ReflectPropertyDescriptor");
+            var wrapMe = Assembly.GetAssembly(typeof(PropertyDescriptor)).GetType("System.ComponentModel.ReflectPropertyDescriptor");
             foreach (PropertyDescriptor oldProp in oldProps) {
-                PropertyDescriptor pd = oldProp;
+                var pd = oldProp;
                 // if it looks like reflection, try to create a bespoke descriptor
                 if (ReferenceEquals(wrapMe, pd.GetType()) && TryCreatePropertyDescriptor(ref pd)) {
                     changed = true;
@@ -45,15 +45,15 @@ namespace Hyper.ComponentModel {
         static readonly ModuleBuilder moduleBuilder;
         static int counter;
         static HyperTypeDescriptor() {
-            AssemblyName an = new AssemblyName("Hyper.ComponentModel.dynamic");
-            AssemblyBuilder ab = AssemblyBuilder.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
+            var an = new AssemblyName("Hyper.ComponentModel.dynamic");
+            var ab = AssemblyBuilder.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
             moduleBuilder = ab.DefineDynamicModule("Hyper.ComponentModel.dynamic.dll");
 
         }
 
         private static bool TryCreatePropertyDescriptor(ref PropertyDescriptor descriptor) {
             try {
-                PropertyInfo property = descriptor.ComponentType.GetProperty(descriptor.Name);
+                var property = descriptor.ComponentType.GetProperty(descriptor.Name);
                 if (property == null) return false;
 
                 lock (properties) {
@@ -63,12 +63,12 @@ namespace Hyper.ComponentModel {
                         return true;
                     }
 
-                    string name = "_c" + Interlocked.Increment(ref counter).ToString();
-                    TypeBuilder tb = moduleBuilder.DefineType(name, TypeAttributes.Sealed | TypeAttributes.NotPublic | TypeAttributes.Class | TypeAttributes.BeforeFieldInit | TypeAttributes.AutoClass | TypeAttributes.Public, typeof(ChainingPropertyDescriptor));
+                    var name = "_c" + Interlocked.Increment(ref counter).ToString();
+                    var tb = moduleBuilder.DefineType(name, TypeAttributes.Sealed | TypeAttributes.NotPublic | TypeAttributes.Class | TypeAttributes.BeforeFieldInit | TypeAttributes.AutoClass | TypeAttributes.Public, typeof(ChainingPropertyDescriptor));
 
                     // ctor calls base
-                    ConstructorBuilder cb = tb.DefineConstructor(MethodAttributes.HideBySig | MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName, CallingConventions.Standard, new Type[] { typeof(PropertyDescriptor) });
-                    ILGenerator il = cb.GetILGenerator();
+                    var cb = tb.DefineConstructor(MethodAttributes.HideBySig | MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName, CallingConventions.Standard, new Type[] { typeof(PropertyDescriptor) });
+                    var il = cb.GetILGenerator();
                     il.Emit(OpCodes.Ldarg_0);
                     il.Emit(OpCodes.Ldarg_1);
                     il.Emit(OpCodes.Call, typeof(ChainingPropertyDescriptor).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(PropertyDescriptor) }, null));
@@ -87,7 +87,7 @@ namespace Hyper.ComponentModel {
                         il = mb.GetILGenerator();
                         if (property.DeclaringType.IsValueType) {
                             // upbox the object argument into our known (instance) struct type
-                            LocalBuilder lb = il.DeclareLocal(property.DeclaringType);
+                            var lb = il.DeclareLocal(property.DeclaringType);
                             il.Emit(OpCodes.Ldarg_1);
                             il.Emit(OpCodes.Unbox_Any, property.DeclaringType);
                             il.Emit(OpCodes.Stloc_0);
@@ -177,7 +177,7 @@ namespace Hyper.ComponentModel {
                         }
 
                         if (supportsChangeEvents) {
-                            EventInfo ei = property.DeclaringType.GetEvent(property.Name + "Changed");
+                            var ei = property.DeclaringType.GetEvent(property.Name + "Changed");
                             if (ei != null) {
                                 baseMethod = typeof(ChainingPropertyDescriptor).GetMethod("AddValueChanged");
                                 mb = tb.DefineMethod(baseMethod.Name, MethodAttributes.HideBySig | MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.Final | MethodAttributes.SpecialName, baseMethod.CallingConvention, baseMethod.ReturnType, new Type[] { typeof(object), typeof(EventHandler) });
@@ -202,7 +202,7 @@ namespace Hyper.ComponentModel {
                         }
 
                     }
-                    PropertyDescriptor newDesc = tb.CreateType().GetConstructor(new Type[] { typeof(PropertyDescriptor) }).Invoke(new object[] { descriptor }) as PropertyDescriptor;
+                    var newDesc = tb.CreateType().GetConstructor(new Type[] { typeof(PropertyDescriptor) }).Invoke(new object[] { descriptor }) as PropertyDescriptor;
                     if (newDesc == null) {
                         return false;
                     }

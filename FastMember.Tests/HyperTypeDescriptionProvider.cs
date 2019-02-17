@@ -13,7 +13,7 @@ using System.Security.Permissions;
 namespace Hyper.ComponentModel {
     public sealed class HyperTypeDescriptionProvider : TypeDescriptionProvider {
         public static void Add(Type type) {
-            TypeDescriptionProvider parent = TypeDescriptor.GetProvider(type);
+            var parent = TypeDescriptor.GetProvider(type);
             TypeDescriptor.AddProvider(new HyperTypeDescriptionProvider(parent), type);
         }
         public HyperTypeDescriptionProvider() : this(typeof(object)) { }
@@ -55,7 +55,7 @@ namespace Hyper.ComponentModel {
 
             // get the parent descriptor and add to the dictionary so that
             // building the new descriptor will use the base rather than recursing
-            ICustomTypeDescriptor descriptor = base.GetTypeDescriptor(objectType, null);
+            var descriptor = base.GetTypeDescriptor(objectType, null);
             descriptors.Add(objectType, descriptor);
             try
             {

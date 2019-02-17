@@ -8,13 +8,13 @@ namespace FastMember
     /// <summary>
     /// Represents an abstracted view of the members defined for a type
     /// </summary>
-    public sealed class MemberSet : IEnumerable<Member>, IList<Member>
+    public sealed class MemberSet : IList<Member>
     {
-        Member[] members;
+        readonly Member[] members;
         internal MemberSet(Type type)
         {
             const BindingFlags PublicInstance = BindingFlags.Public | BindingFlags.Instance;
-            members = type.GetProperties(PublicInstance).Cast<MemberInfo>().Concat(type.GetFields(PublicInstance).Cast<MemberInfo>()).OrderBy(x => x.Name)
+            members = type.GetProperties(PublicInstance).Concat(type.GetFields(PublicInstance).Cast<MemberInfo>()).OrderBy(x => x.Name)
                 .Select(member => new Member(member)).ToArray();
         }
         /// <summary>
@@ -27,18 +27,17 @@ namespace FastMember
         /// <summary>
         /// Get a member by index
         /// </summary>
-        public Member this[int index]
-        {
-            get { return members[index]; }
-        }
+        public Member this[int index] => members[index];
+
         /// <summary>
         /// The number of members defined for this type
         /// </summary>
-        public int Count { get { return members.Length; } }
+        public int Count => members.Length;
+
         Member IList<Member>.this[int index]
         {
-            get { return members[index]; }
-            set { throw new NotSupportedException(); }
+            get => members[index];
+            set => throw new NotSupportedException();
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { return GetEnumerator(); }
@@ -50,7 +49,7 @@ namespace FastMember
 
         bool ICollection<Member>.Contains(Member item)  => members.Contains(item);
         void ICollection<Member>.CopyTo(Member[] array, int arrayIndex) { members.CopyTo(array, arrayIndex); }
-        bool ICollection<Member>.IsReadOnly { get { return true; } }
+        bool ICollection<Member>.IsReadOnly => true;
         int IList<Member>.IndexOf(Member member) { return Array.IndexOf<Member>(members, member); }
         
     }
@@ -67,7 +66,8 @@ namespace FastMember
         /// <summary>
         /// The name of this member
         /// </summary>
-        public string Name { get { return member.Name; } }
+        public string Name => member.Name;
+
         /// <summary>
         /// The type of value stored in this member
         /// </summary>
@@ -75,8 +75,14 @@ namespace FastMember
         {
             get
             {
-                if(member is FieldInfo) return ((FieldInfo)member).FieldType;
-                if (member is PropertyInfo) return ((PropertyInfo)member).PropertyType;
+                switch (member)
+                {
+                    case FieldInfo _:
+                        return ((FieldInfo)member).FieldType;
+                    case PropertyInfo _:
+                        return ((PropertyInfo)member).PropertyType;
+                }
+
                 throw new NotSupportedException(member.GetType().Name);
             }
         }
